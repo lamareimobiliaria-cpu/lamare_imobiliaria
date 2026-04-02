@@ -1,0 +1,9 @@
+{
+  "query": "CREATE TABLE IF NOT EXISTS `chatSessions` (`id` int AUTO_INCREMENT NOT NULL, `userId` int, `clientName` varchar(255), `clientEmail` varchar(320), `clientPhone` varchar(50), `messages` json, `status` enum('active','closed') NOT NULL DEFAULT 'active', `createdAt` timestamp NOT NULL DEFAULT (now()), `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP, CONSTRAINT `chatSessions_id` PRIMARY KEY(`id`))",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3kNyxrhrZujgNiR.root --database Aty2tZKr9Lr8yhcWz9Hf4u --execute CREATE TABLE IF NOT EXISTS `chatSessions` (`id` int AUTO_INCREMENT NOT NULL, `userId` int, `clientName` varchar(255), `clientEmail` varchar(320), `clientPhone` varchar(50), `messages` json, `status` enum('active','closed') NOT NULL DEFAULT 'active', `createdAt` timestamp NOT NULL DEFAULT (now()), `updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP, CONSTRAINT `chatSessions_id` PRIMARY KEY(`id`))",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 421
+}

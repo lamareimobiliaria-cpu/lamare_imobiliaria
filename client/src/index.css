@@ -1,0 +1,236 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* La Mare — Official Brand Colors */
+  --radius: 0.65rem;
+  
+  /* Official La Mare Palette — Manual de Identidade Visual */
+  --azul-escuro: #0A2540;      /* Tom principal, para fundos e textos sérios */
+  --azul-oceano: #1A4D75;      /* Para detalhes, ondas e elementos de destaque */
+  --dourado-mare: #C5A059;     /* Para ícones, linhas divisórias e detalhes de luxo */
+  --areia: #F9F7F2;            /* Para fundos leves e áreas de respiro */
+  --creme-luxo: #FFFDF9;       /* Fundo principal do papel */
+  --muted: #7a7670;
+  --line: rgba(10,37,64,0.10);
+  
+  /* Aliases para compatibilidade */
+  --azul: #0A2540;
+  --dourado: #C5A059;
+  --dourado-l: #d4b47a;
+  
+  /* Tailwind color mappings */
+  --background: #F9F7F2;
+  --foreground: #0A2540;
+  --card: #FFFDF9;
+  --card-foreground: #0A2540;
+  --popover: #FFFDF9;
+  --popover-foreground: #0A2540;
+  
+  /* Primary: Dourado (Gold) */
+  --primary: #C5A059;
+  --primary-foreground: #FFFDF9;
+  
+  /* Secondary: Azul (Navy) */
+  --secondary: #0A2540;
+  --secondary-foreground: #FFFDF9;
+  
+  --muted: #F9F7F2;
+  --muted-foreground: #7a7670;
+  
+  /* Accent: Azul */
+  --accent: #0A2540;
+  --accent-foreground: #FFFDF9;
+  
+  --destructive: #ef4444;
+  --destructive-foreground: #FFFDF9;
+  
+  --border: rgba(10,37,64,0.10);
+  --input: rgba(10,37,64,0.10);
+  --ring: #C5A059;
+  
+  /* Chart colors */
+  --chart-1: #0A2540;
+  --chart-2: #C5A059;
+  --chart-3: #F9F7F2;
+  --chart-4: #7a7670;
+  --chart-5: #d4b47a;
+  
+  /* Sidebar */
+  --sidebar: #0A2540;
+  --sidebar-foreground: #FFFDF9;
+  --sidebar-primary: #C5A059;
+  --sidebar-primary-foreground: #0A2540;
+  --sidebar-accent: #F9F7F2;
+  --sidebar-accent-foreground: #0A2540;
+  --sidebar-border: rgba(197,160,89,0.2);
+  --sidebar-ring: #C5A059;
+  
+  /* Custom La Mare tokens */
+  --ocean-deep: #0A2540;
+  --ocean-mid: #1a3f52;
+  --ocean-light: #2d5a6f;
+  --sand: #F9F7F2;
+  --gold: #C5A059;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+}
+
+.dark {
+  --background: #0A2540;
+  --foreground: #FFFDF9;
+  --card: #1a3f52;
+  --card-foreground: #FFFDF9;
+  --popover: #1a3f52;
+  --popover-foreground: #FFFDF9;
+  --primary: #C5A059;
+  --primary-foreground: #0A2540;
+  --secondary: #F9F7F2;
+  --secondary-foreground: #0A2540;
+  --muted: #2d5a6f;
+  --muted-foreground: #d4b47a;
+  --accent: #C5A059;
+  --accent-foreground: #0A2540;
+  --destructive: #ef4444;
+  --destructive-foreground: #FFFDF9;
+  --border: rgba(197,160,89,0.2);
+  --input: rgba(197,160,89,0.2);
+  --ring: #C5A059;
+  --chart-1: #C5A059;
+  --chart-2: #d4b47a;
+  --chart-3: #F9F7F2;
+  --chart-4: #FFFDF9;
+  --chart-5: #7a7670;
+  --sidebar: #0A2540;
+  --sidebar-foreground: #FFFDF9;
+  --sidebar-primary: #C5A059;
+  --sidebar-primary-foreground: #0A2540;
+  --sidebar-accent: #1a3f52;
+  --sidebar-accent-foreground: #FFFDF9;
+  --sidebar-border: rgba(197,160,89,0.2);
+  --sidebar-ring: #C5A059;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-serif);
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .font-serif { font-family: var(--font-serif); }
+  .text-ocean-deep { color: var(--ocean-deep); }
+  .text-ocean-mid { color: var(--ocean-mid); }
+  .text-ocean-light { color: var(--ocean-light); }
+  .text-gold { color: var(--gold); }
+  .bg-ocean-deep { background-color: var(--ocean-deep); }
+  .bg-ocean-mid { background-color: var(--ocean-mid); }
+  .bg-sand { background-color: var(--sand); }
+  .bg-gold { background-color: var(--gold); }
+  .border-gold { border-color: var(--gold); }
+  .gradient-ocean {
+    background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-mid) 60%, var(--ocean-light) 100%);
+  }
+}
+
+@layer components {
+  /**
+   * Custom container utility that centers content and adds responsive padding.
+   *
+   * This overrides Tailwind's default container behavior to:
+   * - Auto-center content (mx-auto)
+   * - Add responsive horizontal padding
+   * - Set max-width for large screens
+   *
+   * Usage: <div className="container">...</div>
+   *
+   * For custom widths, use max-w-* utilities directly:
+   * <div className="max-w-6xl mx-auto px-4">...</div>
+   */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem; /* 16px - mobile padding */
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* 32px - desktop padding */
+      padding-right: 2rem;
+      max-width: 1280px; /* Standard content width */
+    }
+  }
+}

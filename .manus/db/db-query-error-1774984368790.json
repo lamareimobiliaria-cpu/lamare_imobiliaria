@@ -1,0 +1,17 @@
+{
+  "query": "CREATE TABLE `properties` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`title` varchar(255) NOT NULL,\n\t`description` text,\n\t`price` decimal(15,2) NOT NULL,\n\t`area` decimal(10,2) NOT NULL,\n\t`bedrooms` int DEFAULT 0,\n\t`bathrooms` int DEFAULT 0,\n\t`parkingSpots` int DEFAULT 0,\n\t`type` enum('apartment','house','penthouse','land','commercial') NOT NULL DEFAULT 'apartment',\n\t`city` varchar(100) NOT NULL,\n\t`state` varchar(100) NOT NULL,\n\t`neighborhood` varchar(100),\n\t`address` text,\n\t`latitude` float,\n\t`longitude` float,\n\t`beachDistance` int,\n\t`features` json DEFAULT ('[]'),\n\t`coverImage` text,\n\t`images` json DEFAULT ('[]'),\n\t`status` enum('available','sold','rented','reserved') NOT NULL DEFAULT 'available',\n\t`featured` boolean DEFAULT false,\n\t`yearBuilt` int,\n\t`condoFee` decimal(10,2),\n\t`iptu` decimal(10,2),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `properties_id` PRIMARY KEY(`id`)\n)",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway05.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3kNyxrhrZujgNiR.root --database Aty2tZKr9Lr8yhcWz9Hf4u --execute CREATE TABLE `properties` (\n\t`id` int AUTO_INCREMENT NOT NULL,\n\t`title` varchar(255) NOT NULL,\n\t`description` text,\n\t`price` decimal(15,2) NOT NULL,\n\t`area` decimal(10,2) NOT NULL,\n\t`bedrooms` int DEFAULT 0,\n\t`bathrooms` int DEFAULT 0,\n\t`parkingSpots` int DEFAULT 0,\n\t`type` enum('apartment','house','penthouse','land','commercial') NOT NULL DEFAULT 'apartment',\n\t`city` varchar(100) NOT NULL,\n\t`state` varchar(100) NOT NULL,\n\t`neighborhood` varchar(100),\n\t`address` text,\n\t`latitude` float,\n\t`longitude` float,\n\t`beachDistance` int,\n\t`features` json DEFAULT ('[]'),\n\t`coverImage` text,\n\t`images` json DEFAULT ('[]'),\n\t`status` enum('available','sold','rented','reserved') NOT NULL DEFAULT 'available',\n\t`featured` boolean DEFAULT false,\n\t`yearBuilt` int,\n\t`condoFee` decimal(10,2),\n\t`iptu` decimal(10,2),\n\t`createdAt` timestamp NOT NULL DEFAULT (now()),\n\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,\n\tCONSTRAINT `properties_id` PRIMARY KEY(`id`)\n)",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your TiDB version for the right syntax to use line 18 column 31 near \"'[]'),",
+    "\t`coverImage` text,",
+    "\t`images` json DEFAULT ('[]'),",
+    "\t`status` enum('available','sold','rented','reserved') NOT NULL DEFAULT 'available',",
+    "\t`featured` boolean DEFAULT false,",
+    "\t`yearBuilt` int,",
+    "\t`condoFee` decimal(10,2),",
+    "\t`iptu` decimal(10,2),",
+    "\t`createdAt` timestamp NOT NULL DEFAULT (now()),",
+    "\t`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMES"
+  ]
+}
